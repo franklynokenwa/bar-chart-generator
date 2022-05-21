@@ -1,0 +1,37 @@
+.container {
+  padding-top: 3rem;
+  background-color: rgb(255, 255, 255);
+  width: 50%;
+  padding-left: 3rem;
+  font-size: 16px;
+}
+.container h2 {
+  font-size: 24px;
+}
+.container input {
+  width: 20rem;
+  height: 1.5rem;
+}
+.container .form__input__container {
+  display: flex;
+  align-items: center;
+}
+.container .form__input_checkbox {
+  width: 0.8rem;
+  height: 1.3rem;
+  margin-right: 8px;
+  background-color: black;
+}
+.container .form__input_phoneNumber {
+  width: 10rem;
+}
+.container .form__input_submit {
+  width: 15rem;
+  height: 2.3rem;
+  background-color: rgb(51, 173, 255);
+  border: none;
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 13px;
+}/*# sourceMappingURL=Form.module.css.map */

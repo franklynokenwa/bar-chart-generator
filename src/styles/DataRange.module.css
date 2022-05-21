@@ -1,0 +1,25 @@
+.container {
+  background-color: rgb(250, 251, 255);
+  width: 50%;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container img {
+  margin-top: 5rem;
+  width: 27rem;
+}
+.container .container__text {
+  margin-top: 5rem;
+  text-align: center;
+}
+.container h2 {
+  font-weight: 800;
+  font-size: 24px;
+}
+.container p {
+  width: 22rem;
+  font-size: 16px;
+}/*# sourceMappingURL=DataRange.module.css.map */

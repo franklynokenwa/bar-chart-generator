@@ -1,0 +1,42 @@
+@use './variables.scss' as variables;
+
+.container{
+    padding-top: 3rem;
+    background-color: variables.$formBackgroundColor;
+    width: 50%;
+    padding-left: 3rem;
+    font-size: 16px;
+
+    h2{
+        font-size: 24px;
+    }
+
+    input{
+        width: 20rem;
+        height: 1.5rem;
+    }
+    .form__input__container{
+        display: flex;
+        align-items: center;
+    }
+
+    .form__input_checkbox{
+        width: 0.8rem;
+        height: 1.3rem;
+        margin-right:8px;
+        background-color: black;
+    }
+    .form__input_phoneNumber{
+        width: 10rem;
+    }
+    .form__input_submit{
+        width: 15rem;
+        height: 2.3rem;
+        background-color: variables.$buttonColor;
+        border: none;
+        color: white;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 13px;
+    }
+}

@@ -1,0 +1,6 @@
+@use './variables';
+
+main{
+    display: flex;
+    border: 12px solid variables.$borderColor;
+}

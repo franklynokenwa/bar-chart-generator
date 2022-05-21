@@ -1,0 +1,31 @@
+@use './variables' as variables;
+
+.container{
+    background-color: variables.$dataRangeBackgroundColor;
+    width: 50%;
+    margin-right: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    img{
+        margin-top: 5rem;
+        width: 27rem;
+    }
+
+    .container__text{
+        margin-top: 5rem;
+        text-align: center;
+    }
+
+    h2{
+        font-weight: 800;
+        font-size: 24px;
+    }
+
+    p{
+        width: 22rem;
+        font-size: 16px;
+    }
+}
