@@ -15,6 +15,10 @@
         width: 20rem;
         height: 1.5rem;
     }
+    .form__error{
+        color: red;
+    }
+    
     .form__input__container{
         display: flex;
         align-items: center;
@@ -24,7 +28,6 @@
         width: 0.8rem;
         height: 1.3rem;
         margin-right:8px;
-        background-color: black;
     }
     .form__input_phoneNumber{
         width: 10rem;
@@ -39,4 +42,5 @@
         cursor: pointer;
         font-size: 13px;
     }
+    
 }
