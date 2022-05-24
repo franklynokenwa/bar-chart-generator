@@ -1,0 +1,13 @@
+@use './variables.scss' as variables;
+
+
+.chart__container{
+    width: 100vw;
+    height: 90vh;
+    background: url(variables.$imgUrl);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+svg{
+    margin-top: 2rem;
+}

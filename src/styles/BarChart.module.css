@@ -1,0 +1,11 @@
+.chart__container {
+  width: 100vw;
+  height: 90vh;
+  background: url("../images/graphLarge.PNG");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+svg {
+  margin-top: 2rem;
+}/*# sourceMappingURL=BarChart.module.css.map */
