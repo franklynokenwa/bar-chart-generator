@@ -1,5 +1,7 @@
 import React,{useState} from 'react'
+import {useNavigate} from 'react-router-dom';
 import Data from '../styles/Form.module.css'
+
 
 const Form = () => {
     
@@ -15,6 +17,8 @@ const [formData, setFormData] = useState({
 
 const[formErrors, setFormErrors] = useState({})
 
+const navigate = useNavigate();
+
 const error = {
     emailError: "",
     passwordError:"",
@@ -25,8 +29,6 @@ const error = {
 
 const handleChange = (event) => {
     const {name,value, type, checked} = event.target
-    //const passwordRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,})");
-
     
     setFormData( prevFormData => {
         return {
@@ -37,17 +39,23 @@ const handleChange = (event) => {
 }
 
 const validateForm= (values) => {
-    const emailRegex = /(?:[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*|"(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21\x23-\x5b\x5d-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])*")@(?:(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?|\[(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?|[a-z0-9-]*[a-z0-9]:(?:[\x01-\x08\x0b\x0c\x0e-\x1f\x21-\x5a\x53-\x7f]|\\[\x01-\x09\x0b\x0c\x0e-\x7f])+)\])/;
+    const emailRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     const phoneRegex = /^\+(?:[0-9] ?){6,14}[0-9]$/;
 
     if(!emailRegex.test(values.emailAddress)){
         error.emailError = "The email address is not a valid email address"
+    }
+    if((values.password < 6 || values.password === "" || values.password === null)){
+        error.passwordError = "The password should not be empty or less than 6"
     }
     if(values.password !== values.confirmPassword){
         error.confirmPasswordError = "The password does not match"
     }
     if(!phoneRegex.test(values.phoneNumber)){
         error.phoneNumberError = "The phone number is not a valid phone number"
+    }
+    if((formErrors.emailError === "" && formErrors.confirmPasswordError === "" && formErrors.phoneNumberError === "") ){
+        navigate('/chart');
     }
 
     return error
@@ -57,9 +65,10 @@ const submitForm = (event)=>{
     event.preventDefault();
     console.log(formData);
     setFormErrors(validateForm(formData));
-    console.log(error);
 
 }
+console.log(formErrors);
+
 
   return (
     <div className={Data.container}>
@@ -85,7 +94,8 @@ const submitForm = (event)=>{
                     onChange={handleChange}
                     value={formData.password}
                 />
-            </div> <br/>
+                <p className={Data.form__error}>{formErrors.passwordError}</p>
+            </div>
             <div>
                 <label htmlFor="confirmPassword">Confirm your password</label><br/>
                 <input 
@@ -96,7 +106,7 @@ const submitForm = (event)=>{
                     value={formData.confirmPassword}  
                 />
                 <p className={Data.form__error}>{formErrors.confirmPasswordError}</p>
-            </div><br/>
+            </div>
             <div>
                 <label htmlFor="fullName">Your full name</label><br/>
                 <input 
@@ -106,7 +116,7 @@ const submitForm = (event)=>{
                     onChange={handleChange}
                     value={formData.fullName}
                 />
-            </div><br/>
+            </div>
             <div>
                 <label htmlFor="phoneNumber">Your phone number</label><br/>
                 <input 
@@ -118,7 +128,7 @@ const submitForm = (event)=>{
                     value={formData.phoneNumber}
                 />
                 <p className={Data.form__error}>{formErrors.phoneNumberError}</p>
-            </div><br/>
+            </div>
             <div className={Data.form__input__container}>
                 <input 
                     className={Data.form__input_checkbox} 
@@ -130,8 +140,8 @@ const submitForm = (event)=>{
                 />
                 <label htmlFor="isChecked">I have and agreed terms and conditions</label>
             </div><br/><br/>
+                <button className={Data.form__input_submit}>Create and account</button>
             
-            <button className={Data.form__input_submit}>Create and account</button>
         </form>
     </div>
   )

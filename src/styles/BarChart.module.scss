@@ -11,3 +11,18 @@
 svg{
     margin-top: 2rem;
 }
+
+.button__generate{
+    width: 15rem;
+    height: 2.3rem;
+    background-color: variables.$buttonColor;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-size: 13px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

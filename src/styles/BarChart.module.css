@@ -8,4 +8,19 @@
 
 svg {
   margin-top: 2rem;
+}
+
+.button__generate {
+  width: 15rem;
+  height: 2.3rem;
+  background-color: rgb(51, 173, 255);
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 13px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }/*# sourceMappingURL=BarChart.module.css.map */

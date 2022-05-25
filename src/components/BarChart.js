@@ -11,8 +11,6 @@ const sample = [
 	{category:'D', quantity: 86}
 ]
 
-
-
 const BarChart = () => {
 	const [values,setValues] = useState([
 		{category:'A', quantity: 40},
@@ -134,7 +132,7 @@ return (
 		<div id='d3demo' className={BarChartStyle.chart__container}>
 	  		<svg ref={d3Chart}></svg>
 		</div>
-		<button onClick={generateNewBarChart}>Generate Bar Chart</button>
+		<button onClick={generateNewBarChart} className={BarChartStyle.button__generate}>Generate Bar Chart</button>
 	</section>
 	
 )
